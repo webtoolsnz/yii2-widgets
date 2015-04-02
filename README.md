@@ -95,5 +95,4 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
 	]
 ]);
 ~~~
-![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-butto-group3.png)
-
+![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-button-group3.png)
