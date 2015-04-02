@@ -4,7 +4,7 @@
  * @copyright Copyright (c) 2015 Webtools Ltd
  */
 
-namespace webtoolsnz\wysihtml5;
+namespace webtoolsnz\widgets;
 
 use yii\helpers\Html;
 use yii\helpers\Json;
