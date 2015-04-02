@@ -78,7 +78,7 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
     ]
  ]) ?>
 ~~~
-
+![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-button-group2.png)
 
 **Customised label states based on value:**
 Green for yes, red for no, orange for maybe.
@@ -95,3 +95,5 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
 	]
 ]);
 ~~~
+![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-butto-group3.png)
+
