@@ -15,11 +15,11 @@ use yii\web\AssetBundle;
 class RadioButtonGroupAsset extends AssetBundle
 {
     public $js = [
-        'js\radio-button-group.js',
+        'js/radio-button-group.js',
     ];
 
     public $css = [
-        'css\radio-button-group.css'
+        'css/radio-button-group.css'
     ];
 
     public $depends = [
