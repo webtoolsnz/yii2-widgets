@@ -6,7 +6,7 @@ A set of reusable widgets for Yii2.
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Add the following 
+Add the following to your `composer.json` file.
 
 ~~~
     "require" : {
@@ -19,8 +19,6 @@ Add the following
         }
     ]
 ~~~
-
-to your `composer.json` file.
 
 
 ## Widgets Available
