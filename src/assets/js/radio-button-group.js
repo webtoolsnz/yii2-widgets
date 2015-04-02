@@ -1,5 +1,5 @@
 (function (window, $) {
-    $.fn.radioButton = function (options) {
+    $.fn.radioButtonGroup = function (options) {
         return this.each(function () {
             var el = $(this),
                 input = $(el.data('field'));
