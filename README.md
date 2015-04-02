@@ -63,6 +63,8 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
 	'items' => [1 => 'Yes', 0 => 'No', 3 => 'Maybe']
 ]);
 ~~~
+![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-butto-group1.png)
+
 
 **Customised active state (blue) and increased size:**
 ~~~
@@ -93,4 +95,3 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
 	]
 ]);
 ~~~
-
