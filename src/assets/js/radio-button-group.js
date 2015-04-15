@@ -19,7 +19,7 @@
                     activeState = buttonOptions && buttonOptions['activeState'] ? buttonOptions['activeState'] : options['activeState'],
                     defaultState = buttonOptions && buttonOptions['defaultState'] ? buttonOptions['defaultState'] : options['defaultState'];
 
-                input.val(value);
+                input.val(value).trigger('change');
                 $(this).attr('class', activeState).siblings().each(function () {
                     var buttonOptions = options.buttons[$(this).data('value')],
                         defaultState = buttonOptions && buttonOptions['defaultState'] ? buttonOptions['defaultState'] : options['defaultState'];
