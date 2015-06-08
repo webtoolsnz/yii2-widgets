@@ -4,7 +4,7 @@
   "keywords": ["yii2", "widget", "wysiwyg", "radioButton"],
   "type": "yii2-extension",
   "license": "proprietary",
-  "homepage": "https://bitbucket.org/webtoolsnz/yii2-widgets",
+  "homepage": "https://github.com/webtoolsnz/yii2-widgets",
   "authors": [
     {
       "name": "Byron Adams",
