@@ -65,7 +65,7 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
 	'items' => [1 => 'Yes', 0 => 'No', 3 => 'Maybe']
 ]);
 ~~~
-![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-butto-group1.png)
+![screenshot](/docs/images/radio-butto-group1.png?raw=true)
 
 
 **Customised active state (blue) and increased size:**
@@ -80,7 +80,7 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
     ]
  ]) ?>
 ~~~
-![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-button-group2.png)
+![screenshot](/docs/images/radio-button-group2.png?raw=true)
 
 **Customised label states based on value:**
 Green for yes, red for no, orange for maybe.
@@ -97,4 +97,4 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
 	]
 ]);
 ~~~
-![screenshot](https://bitbucket.org/webtoolsnz/yii2-widgets/raw/master/docs/images/radio-button-group3.png)
+![screenshot](/docs/images/radio-button-group3.png?raw=true)
