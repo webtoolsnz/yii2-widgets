@@ -59,7 +59,8 @@ class DatePicker extends InputWidget
 
         $this->options = array_merge($this->options, [
             'type' => 'date',
-            'value' => $this->getFormattedDate(),
+            'value' => $this->getDate(),
+            'formattedValue' => $this->getFormattedDate(),
         ]);
     }
 
@@ -89,10 +90,10 @@ class DatePicker extends InputWidget
 
         $id = $this->options['id'];
         $options = Json::encode($this->clientOptions);
-        $view->registerJs("jQuery('#$id').progressiveDatePicker($options);");
+        $view->registerJs("jQuery('#$id').progressiveDatePicker('{$this->options['formattedValue']}', $options);");
     }
 
-    public function getFormattedDate()
+    public function getDate()
     {
         // get formatted date value
         if ($this->hasModel()) {
@@ -100,6 +101,13 @@ class DatePicker extends InputWidget
         } else {
             $value = $this->value;
         }
+
+        return $value;
+    }
+
+    public function getFormattedDate()
+    {
+        $value = $this->getDate();
 
         if ($value !== null && $value !== '') {
             // format value according to dateFormat
