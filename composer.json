@@ -21,7 +21,8 @@
   "require": {
     "yiisoft/yii2": "~2.0.0",
     "yiisoft/yii2-bootstrap": "*",
-    "yiisoft/yii2-jui" : "*"
+    "yiisoft/yii2-jui" : "*",
+    "symfony/intl": "^2.7"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
