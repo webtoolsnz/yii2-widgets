@@ -2,9 +2,10 @@
 
     $.googlePlaceSearchDefaults = {
         'placeChanged' : $.noop,
+        'focusZoom' : 15,
+        'country' : 'nz',
         'map' : {
-            'selector' : null,
-
+            'selector' : null
         },
         'autocomplete' : {
             'types' : ['geocode']
@@ -14,12 +15,14 @@
 
     $.fn.googlePlaceSearch = function (options) {
         options = $.extend($.googlePlaceSearchDefaults, options);
+
         return this.each(function () {
             var el = $(this);
             var autocomplete = new google.maps.places.Autocomplete(this, options['autocomplete']);
             var $map = $(options['map']['selector']);
             var map;
             var marker;
+            var country =  $.googlePlaceSearchCountries[options.country];
 
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 var place = autocomplete.getPlace();
@@ -35,7 +38,7 @@
                     }
 
                     map.setCenter(place.geometry.location);
-                    map.setZoom(15);
+                    map.setZoom(options.focusZoom);
                 }
             });
 
@@ -49,16 +52,29 @@
 
             if ($map.get(0)) {
 
-                var myOptions = {
-                    zoom: $.googlePlaceSearchCountries['au'].zoom,
-                    center: $.googlePlaceSearchCountries['au'].center,
-                    mapTypeControl: false,
-                    panControl: false,
-                    zoomControl: false,
-                    streetViewControl: false
-                };
+                map = new google.maps.Map($map.get(0), $.extend({
+                    //'draggable' : false,
+                    'mapTypeControl' : false,
+                    'panControl' : false,
+                    //'zoomControl' : false,
+                    'streetViewControl' : false,
+                    'scrollwheel' : false,
+                }, options.map));
 
-                map = new google.maps.Map($map.get(0), myOptions);
+                if (options.map.marker && options.map.marker.lat && options.map.marker.lng) {
+                    var location = new google.maps.LatLng(options.map.marker.lat, options.map.marker.lng);
+
+                    marker = new google.maps.Marker({
+                        map : map,
+                        position: location
+                    });
+
+                    map.setCenter(location);
+                    map.setZoom(options.focusZoom);
+                } else if (country)     {
+                    map.setCenter(country.center);
+                    map.setZoom(country.zoom);
+                }
 
                 el.data('map', map);
             }
