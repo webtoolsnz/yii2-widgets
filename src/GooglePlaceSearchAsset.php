@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 class GooglePlaceSearchAsset extends AssetBundle
 {
     public $js = [
-        'https://maps.googleapis.com/maps/api/js?libraries=places',
+        '//maps.googleapis.com/maps/api/js?libraries=places',
         'js/google-place-search.js',
     ];
 

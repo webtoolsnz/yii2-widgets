@@ -25,19 +25,19 @@ class GooglePlaceSearch extends InputWidget
 
     public $country = 'nz';
 
-    public $map;
+    public $map = ['selector' => null];
 
     public function init()
     {
         parent::init();
 
         $this->clientOptions = ArrayHelper::merge([
+            'country' => $this->country,
+            'map' => $this->map,
             'autocomplete' => [
                 'componentRestrictions' => ['country' => $this->country],
             ],
-            'map' => [
-                'selector' => $this->map,
-            ],
+
 
         ], $this->clientOptions);
 
