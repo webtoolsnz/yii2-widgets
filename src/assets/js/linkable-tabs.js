@@ -11,4 +11,14 @@ jQuery(function () {
         window.location.hash = e.target.hash;
         $('html,body').scrollTop(scrollPos);
     });
+
+    // Append Tab hash to any forms that reside within a tab.
+    $('.tab-content .tab-pane form').each(function () {
+        var action = $(this).attr('action'),
+            hash = $(this).parents('.tab-pane').attr('id');
+
+        if (!action.match('#')) {
+            $(this).attr('action', action+'#'+hash);
+        }
+    });
 });
