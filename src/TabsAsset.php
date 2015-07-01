@@ -18,6 +18,13 @@ class TabsAsset extends AssetBundle
         'js/linkable-tabs.js',
     ];
 
+    public $depends = [
+        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
+        'yii\web\JqueryAsset',
+    ];
+
+
     public function init()
     {
         $this->sourcePath = __DIR__ . '/assets';
