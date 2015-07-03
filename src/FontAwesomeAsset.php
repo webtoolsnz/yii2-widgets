@@ -1,5 +1,5 @@
 <?php
-namespace app\assets;
+namespace webtoolsnz\widgets;
 
 use yii\web\AssetBundle;
 
