@@ -55,7 +55,7 @@ class RadioButtonGroup extends InputWidget
 
     public function getButtonClass($value)
     {
-        $selectedValue = $this->hasModel() ? $this->model->{$this->attribute} : $this->value;
+        $selectedValue = $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
         $state = ($value == $selectedValue ? self::STATE_ACTIVE : self::STATE_DEFAULT);
         $buttonOptions = isset($this->itemOptions['buttons'][$value]) ? $this->itemOptions['buttons'][$value] : null;
 
