@@ -37,7 +37,7 @@ Add the following to your `composer.json` file.
     * A Html5 Date Input shim, falls back to JUI DatePicker when no native widget available.
 * [\webtoolsnz\widgets\Tabs](docs/Tabs.md)
     * Extends the yii bootstrap tabs, allows linking to tabs.
-* [\webtoolsnz\widgets\GooglePlaceSearch](docs/GooglePlaceSearch)
+* [\webtoolsnz\widgets\GooglePlaceSearch](docs/GooglePlaceSearch.md)
     * Easy to use input that implements google places search, also supports rendering a map.
 
 
