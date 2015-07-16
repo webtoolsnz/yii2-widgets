@@ -13,6 +13,7 @@ The `CurrencyInput` widget renders an html5 number field, with the localized cur
 **Customising input attributes:**
 Since the input field is renders as a number field, you can apply those attributes, or any html attributes.
 
+```
 <?= $form->field($newRebate, 'rate')->widget(CurrencyInput::className(), ['options' => [
     'min' => 10,
     'max' => 100,
@@ -37,9 +38,11 @@ change this by updating the `formatter` component in your `confg/web.php` file
 ```
 
 `currencyCode` set to `EUR`:
+
 ![screenshot](/docs/images/CurrencyInput-EUR.png?raw=true)
 
 
 `currencyCode` set to `JPY`:
+
 ![screenshot](/docs/images/CurrencyInput-JPY.png?raw=true)
 
