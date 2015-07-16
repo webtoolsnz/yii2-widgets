@@ -4,7 +4,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/badges/coverage.png?b=master&s=fe8e140620533f49eb9ed4af6e31a59c09b4b287)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/badges/build.png?b=master&s=c6f10868824a1c824fe7c275d6d1b78d492bfe84)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/build-status/master)
 
-A set of reusable widgets for Yii2.
+A collection of reusable widgets for Yii2.
 
 ## Installation
 
@@ -14,12 +14,12 @@ Add the following to your `composer.json` file.
 
 ~~~
     "require" : {
-        "webtoolsnz/yii2-widgets": "dev-master"
+        "webtoolsnz/yii2-widgets": "*"
     }, 
     "repositories": [
         {
             "type": "composer",
-            "url": "http://packages.webtools.nz"
+            "url": "https://packages.webtools.nz"
         }
     ]
 ~~~
@@ -27,74 +27,24 @@ Add the following to your `composer.json` file.
 
 ## Widgets Available
 
-
-### Wysihtml5 Editor
-A customizable HTML5 WYSIWYG editor.
-
-**Using on an active form:**
-~~~
-use webtoolsnz\widgets\Wysihtml5;
-
-// Basic usage
-$form->field($model, 'detail')->widget(Wysihtml5::className());
-
-// With customised toolbar and size
-$form->field($model, 'detail')->widget(Wysihtml5::className(), [
-	'options' => ['rows' => 10, 'cols' => 20],
-	'clientOptions' => [
-		'font-styles'=> false,
-    	'emphasis' => false,
-    	'link' => false,
-        'color' => true,
-	]
-]);
-~~~
-
-You can pass any options available into the `clientOptions` property, [See the documentation for more details](https://github.com/Waxolunist/bootstrap3-wysihtml5-bower).
+* [\webtoolsnz\widgets\Wysihtml5](docs/Wysihtml5.md)
+    * A simple HTML5 WYSIWYG editor.
+* [\webtoolsnz\widgets\RadioButtonGroup](docs/RadioButtonGroup.md)
+    * A Slick alternative to radio buttons
+* [\webtoolsnz\widgets\CurrencyInput](docs/CurrencyInput.md)
+    * Input fields that supports localized currency codes.
+* [\webtoolsnz\widgets\DatePicker](docs/DatePicker.md)
+    * A Html5 Date Input shim, falls back to JUI DatePicker when no native widget available.
+* [\webtoolsnz\widgets\Tabs](docs/Tabs.md)
+    * Extends the yii bootstrap tabs, allows linking to tabs.
+* [\webtoolsnz\widgets\GooglePlaceSearch](docs/GooglePlaceSearch)
+    * Easy to use input that implements google places search, also supports rendering a map.
 
 
-### Radio Button Group
+## Asset Bundles
 
-The `RadioButtonGroup` widget renders a list of radio toggle buttons in the form of bootstrap button group. See the [documentation](http://getbootstrap.com/components/#btn-groups)  for more styling information.
+There are also some useful asset bundles available.
 
-**Basic usage with default settings:**
-~~~
-use webtoolsnz\widgets\RadioButtonGroup;
-
-$form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
-	'items' => [1 => 'Yes', 0 => 'No', 3 => 'Maybe']
-]);
-~~~
-![screenshot](/docs/images/radio-butto-group1.png?raw=true)
-
-
-**Customised active state (blue) and increased size:**
-~~~
-use webtoolsnz\widgets\RadioButtonGroup;
-
-$form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
-	'items' => [1 => 'Yes', 0 => 'No', 3 => 'Maybe'],
-	'options' => ['class' => 'btn-group-lg']
-    'itemOptions' => [
-    	'activeState' => 'btn active btn-primary'
-    ]
- ]) ?>
-~~~
-![screenshot](/docs/images/radio-button-group2.png?raw=true)
-
-**Customised label states based on value:**
-Green for yes, red for no, orange for maybe.
-~~~
-use webtoolsnz\widgets\RadioButtonGroup;
-
-$form->field($model, 'status_id')->widget(RadioButtonGroup::className(), [
-	'items' => [1 => 'Yes', 0 => 'No', 3 => 'Maybe'],
-	'itemOptions' => [
-		'buttons' => [
-        	0 => ['activeState' => 'btn active btn-danger'],
-            3 => ['activeState' => 'btn active btn-warning'],
-        ]
-	]
-]);
-~~~
-![screenshot](/docs/images/radio-button-group3.png?raw=true)
+* \webtoolsnz\widgets\FontAwesomeAsset
+* \webtoolsnz\widgets\ModernizrAsset
+* \webtoolsnz\widgets\GooglePlaceSearchAsset
