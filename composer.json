@@ -1,7 +1,7 @@
 {
   "name": "webtoolsnz/yii2-widgets",
   "description": "A Yii2 widgets library by Webtools",
-  "keywords": ["yii2", "widget", "wysiwyg", "radioButton"],
+  "keywords": ["yii2", "widget", "wysiwyg", "radioButton", "google", "maps", "datepicker", "currency"],
   "type": "yii2-extension",
   "license": "proprietary",
   "homepage": "https://github.com/webtoolsnz/yii2-widgets",
@@ -22,7 +22,8 @@
     "yiisoft/yii2": "~2.0.0",
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-jui" : "*",
-    "symfony/intl": "^2.7"
+    "symfony/intl": "^2.7",
+    "bower-asset/font-awesome": "^4.3"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
@@ -30,6 +31,12 @@
   "autoload": {
     "psr-4": {
       "webtoolsnz\\widgets\\": "src"
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
     }
   }
 }
