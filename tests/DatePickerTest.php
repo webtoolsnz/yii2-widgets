@@ -1,14 +1,12 @@
 <?php
 namespace tests;
 
-use webtoolsnz\widgets\DatePickerAsset;
 use Yii;
+use webtoolsnz\widgets\DatePickerAsset;
 use webtoolsnz\widgets\DatePicker;
 use tests\models\Payment;
 use yii\helpers\VarDumper;
 use yii\web\AssetBundle;
-use yii\web\View;
-
 
 class DatePickerTest extends TestCase
 {
