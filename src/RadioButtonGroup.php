@@ -30,6 +30,11 @@ class RadioButtonGroup extends InputWidget
     /**
      * @var array
      */
+    public $inputOptions = [];
+
+    /**
+     * @var array
+     */
     public $items = [];
 
     /**
@@ -51,6 +56,8 @@ class RadioButtonGroup extends InputWidget
             self::STATE_DEFAULT => 'btn btn-default',
             'buttons' => [],
         ], $this->itemOptions);
+
+        $this->inputOptions = array_merge(['id' => $this->options['id']], $this->inputOptions);
     }
 
     public function getButtonClass($value)
@@ -94,9 +101,9 @@ class RadioButtonGroup extends InputWidget
         ]);
 
         if ($this->hasModel()) {
-            echo Html::activeHiddenInput($this->model, $this->attribute, $this->options);
+            echo Html::activeHiddenInput($this->model, $this->attribute, $this->inputOptions);
         } else {
-            echo Html::hiddenInput($this->name, $this->value, $this->options);
+            echo Html::hiddenInput($this->name, $this->value, $this->inputOptions);
         }
 
         $this->registerClientScript();
