@@ -66,7 +66,8 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
                     'scriptUrl' => '/index.php',
                 ],
                 'assetManager' => [
-                    'basePath' => '@tests/data/assets',
+                    'class' => 'tests\AssetManager',
+                    'basePath' => '@tests/assets',
                     'baseUrl' => '/',
                 ]
             ]
@@ -75,7 +76,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
 
     protected function getVendorPath()
     {
-        return dirname(dirname(__DIR__)) . '/vendor';
+        return dirname(__DIR__) . '/vendor';
     }
 
     /**
