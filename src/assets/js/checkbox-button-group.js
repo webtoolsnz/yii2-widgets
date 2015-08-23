@@ -14,7 +14,6 @@
             input = $(options.checkboxes).find(':checkbox');
             input.on('change', options.change).trigger('change');
 
-                debugger;
             el.find('button').on('click', function () {
                 var value = $(this).data('value'),
                     btn = this,
