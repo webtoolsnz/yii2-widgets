@@ -39,6 +39,8 @@ Add the following to your `composer.json` file.
     * Extends the yii bootstrap tabs, allows linking to tabs.
 * [\webtoolsnz\widgets\GooglePlaceSearch](docs/GooglePlaceSearch.md)
     * Easy to use input that implements google places search, also supports rendering a map.
+* [\webtoolsnz\widgets\SelectOther](docs/SelectOther.md)
+    * Simple select an option from predefined array or enter in something else.
 
 
 ## Asset Bundles
