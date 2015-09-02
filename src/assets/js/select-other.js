@@ -29,7 +29,11 @@
                     input.hide();
                     select.val(input.val());
                 } else {
-                    select.val('');
+                    select.children().each(function () {
+                        if ($(this).text() == options.otherText) {
+                            $(this).prop('selected', true);
+                        }
+                    });
                 }
             } else {
                 input.hide()
