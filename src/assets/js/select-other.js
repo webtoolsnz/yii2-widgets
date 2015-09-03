@@ -9,11 +9,16 @@
             options = $.extend({
                 'items' :  [],
                 'otherText' : 'Other',
-                'selectClass' : ''
+                'selectClass' : '',
+                'blankFirstOption' : true
             }, options);
 
             select.addClass(options.selectClass);
-
+            if (options.blankFirstOption) {
+                select.append(
+                    $('<option></option>')
+                );
+            }
             for(var i = 0; i < options.items.length; i++) {
                 select.append(
                     $('<option></option>').text(options.items[i])
