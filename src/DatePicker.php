@@ -113,7 +113,7 @@ class DatePicker extends InputWidget
             // format value according to dateFormat
             try {
                 $value = Yii::$app->formatter->asDate($value, $this->dateFormat);
-            } catch(InvalidParamException $e) {
+            } catch(\yii\base\InvalidParamException $e) {
                 // ignore exception and keep original value if it is not a valid date
             }
         }
