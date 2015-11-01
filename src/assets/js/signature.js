@@ -11,6 +11,8 @@
         return this.each(function () {
             var input = $(this);
             var ts = Date.now();
+            var data = input.val();
+            var toggleContent = "<span class=\"sig-placeholder\">Click here to sign</span>";
 
             options = $.extend({
                 'canvasClass' :  'signaturePad',
@@ -23,11 +25,9 @@
                 },
             }, options);
 
-            var toggleContent =  "<span class=\"sig-placeholder\">Click here to sign</span>";
-
             var tpl = [
                 "<a class=\"sig-toggle\" id=\""+ts+"_toggle\" href=\"#\" data-toggle=\"modal\" data-target=\"#"+ts+"_modal\">",
-                toggleContent,
+                (data !== '' && data.length > 0) ? '<img src="'+data+'">' : toggleContent,
                 "</a>",
                 "<div id=\""+ts+"_modal\" class=\"modal fade\">",
                 "<div class=\"modal-dialog\">",
