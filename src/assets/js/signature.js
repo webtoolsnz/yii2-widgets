@@ -85,8 +85,11 @@
             modal.delegate('.sig-clear', 'click', function (e) {
                 signaturePad.clear();
                 input.val('');
-                modal.modal('hide');
                 toggle.html(toggleContent);
+            });
+
+            modal.on('hide.bs.modal', function () {
+                signaturePad.clear();
             });
         });
     };
