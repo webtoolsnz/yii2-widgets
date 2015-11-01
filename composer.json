@@ -23,7 +23,8 @@
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-jui" : "*",
     "symfony/intl": "^2.7",
-    "bower-asset/font-awesome": "^4.3"
+    "bower-asset/font-awesome": "^4.3",
+    "bower-asset/signature_pad": "^1.5"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
