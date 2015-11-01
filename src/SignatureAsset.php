@@ -33,7 +33,7 @@ class SignatureAsset extends AssetBundle
      */
     public function init()
     {
-        $this->sourcePath = '@app/assets';
+        $this->sourcePath = __DIR__ . '/assets';
         parent::init();
     }
 }
