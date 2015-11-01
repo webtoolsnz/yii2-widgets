@@ -6,6 +6,7 @@ canvas.signaturePad {
 
 a.sig-toggle {
     width: 100%;
+    max-width: 350px;
     height: 70px;
     border: 1px solid #666;
     display: block;
