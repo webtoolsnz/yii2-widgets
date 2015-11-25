@@ -39,13 +39,18 @@ class DatePicker extends InputWidget
     public $value;
 
     /**
+     * @var bool
+     */
+    public $displayIcon = false;
+
+    /**
      * @throws \yii\base\InvalidConfigException
      */
     public function init()
     {
         parent::init();
 
-        Html::addCssClass($this->options, 'progressive-datepicker');
+        Html::addCssClass($this->options, ['progressive-datepicker', 'form-control']);
 
         if (!$this->dateFormat) {
             $this->dateFormat = Yii::$app->formatter->dateFormat;
@@ -70,10 +75,18 @@ class DatePicker extends InputWidget
     public function run()
     {
         if ($this->hasModel()) {
-            echo Html::activeTextInput($this->model, $this->attribute, $this->options);
+            $input = Html::activeTextInput($this->model, $this->attribute, $this->options);
         } else {
-            echo Html::textInput($this->name, $this->options['value'], $this->options);
+            $input = Html::textInput($this->name, $this->options['value'], $this->options);
         }
+
+        if ($this->displayIcon) {
+            $icon = Html::tag('span', null, ['class' => 'glyphicon glyphicon-calendar']);
+            $addon = Html::tag('div', $icon, ['class' => 'input-group-addon']);
+            $input = Html::tag('div', $addon.$input, ['class' => 'input-group']);
+        }
+
+        echo $input;
 
         $this->registerClientScript();
     }
