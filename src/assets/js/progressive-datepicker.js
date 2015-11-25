@@ -2,8 +2,9 @@
     $.fn.progressiveDatePicker = function (value, options) {
         return this.each(function () {
             var el = $(this);
-            if (!Modernizr.inputtypes || !Modernizr.inputtypes.date) {
+            if (!Modernizr.touch || !Modernizr.inputtypes || !Modernizr.inputtypes.date) {
                 el.val(value);
+                el.attr('type', 'text');
                 el.datepicker(options);
             }
         });
