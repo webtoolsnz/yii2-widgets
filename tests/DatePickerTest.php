@@ -18,7 +18,7 @@ class DatePickerTest extends TestCase
             'value' => '2015-01-01',
         ]);
 
-        $expected = '<input type="date" id="test" class="progressive-datepicker" name="test-widget-name" value="2015-01-01" formattedValue="Jan 1, 2015">';
+        $expected = '<input type="date" id="test" class="progressive-datepicker form-control" name="test-widget-name" value="2015-01-01" formattedValue="Jan 1, 2015">';
         $this->assertEquals($expected, $out);
     }
 
@@ -31,7 +31,7 @@ class DatePickerTest extends TestCase
             'value' => '2015-01-01',
         ]);
 
-        $expected = '<input type="date" id="test" class="progressive-datepicker" name="test-widget-name" value="2015-01-01" formattedValue="01/01/2015">';
+        $expected = '<input type="date" id="test" class="progressive-datepicker form-control" name="test-widget-name" value="2015-01-01" formattedValue="01/01/2015">';
         $this->assertEquals($expected, $out);
     }
 
@@ -45,7 +45,7 @@ class DatePickerTest extends TestCase
             'attribute' => 'created_at',
         ]);
 
-        $expected = '<input type="date" id="payment-created_at" class="progressive-datepicker" name="Payment[created_at]" value="2015-07-02" formattedValue="Jul 2, 2015">';
+        $expected = '<input type="date" id="payment-created_at" class="progressive-datepicker form-control" name="Payment[created_at]" value="2015-07-02" formattedValue="Jul 2, 2015">';
         $this->assertEquals($expected, $out);
     }
 
