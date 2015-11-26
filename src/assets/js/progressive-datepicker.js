@@ -3,8 +3,8 @@
         return this.each(function () {
             var el = $(this);
             if (!Modernizr.touch || !Modernizr.inputtypes || !Modernizr.inputtypes.date) {
-                el.val(value);
                 el.attr('type', 'text');
+                el.val(value);
                 el.datepicker(options);
             }
         });
