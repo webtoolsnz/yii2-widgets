@@ -43,6 +43,11 @@ class RadioButtonGroup extends InputWidget
     public $widgetId = null;
 
     /**
+     * @var bool
+     */
+    public $disabled = false;
+
+    /**
      * @throws \yii\base\InvalidConfigException
      */
     public function init()
@@ -86,6 +91,7 @@ class RadioButtonGroup extends InputWidget
             $buttons .= Html::button($label, [
                 'data-value' => $value,
                 'class' => $this->getButtonClass($value),
+                'disabled' => $this->disabled,
             ]);
         }
 
