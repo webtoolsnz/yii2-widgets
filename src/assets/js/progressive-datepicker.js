@@ -3,7 +3,9 @@
         return this.each(function () {
             var el = $(this);
             if (!Modernizr.touch || !Modernizr.inputtypes || !Modernizr.inputtypes.date) {
-                el.attr('type', 'text');
+                try {
+                    el.attr('type', 'text');
+                } catch (e) {}
                 el.val(value);
                 el.datepicker(options);
             }
