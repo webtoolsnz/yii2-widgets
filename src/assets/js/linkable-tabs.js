@@ -2,7 +2,7 @@ jQuery(function () {
     // Javascript to enable link to tab
     var url = document.location.toString();
     if (url.match('#')) {
-        $('.wt-tabs.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show') ;
+        $('.wt-tabs.nav-tabs a[href="#'+url.split('#')[1]+'"]').tab('show') ;
     }
 
     // Change hash for page-reload
