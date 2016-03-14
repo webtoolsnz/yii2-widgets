@@ -1,6 +1,6 @@
 <?php
 /**
- * @link https://bitbucket.org/webtoolsnz/yii2-widgets
+ * @link https://github.com/webtoolsnz/yii2-widgets
  * @copyright Copyright (c) 2015 Webtools Ltd
  */
 namespace webtoolsnz\widgets;
