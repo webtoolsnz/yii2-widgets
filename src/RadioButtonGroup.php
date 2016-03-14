@@ -95,16 +95,22 @@ class RadioButtonGroup extends InputWidget
             ]);
         }
 
-        $class = 'btn-group radio-button-group';
+        $class = 'radio-button-group';
         if (isset($this->options['class'])) {
             $class .= ' '.$this->options['class'];
         }
 
-        echo Html::tag('div', $buttons, [
-            'class' => $class,
-            'id' => $this->widgetId,
-            'data-field' => '#'.$this->options['id'],
-        ]);
+        echo Html::tag(
+            'div',
+            Html::tag('div', $buttons, [
+                'class' => 'btn-group',
+                'id' => $this->widgetId,
+                'data-field' => '#'.$this->options['id'],
+            ]),
+            [
+                'class' => $class,
+            ]
+        );
 
         if ($this->hasModel()) {
             echo Html::activeHiddenInput($this->model, $this->attribute, $this->inputOptions);
