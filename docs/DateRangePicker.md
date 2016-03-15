@@ -20,7 +20,10 @@ You can set any DateRangePicker supported options using the `clientOptions` sett
 For more information view the project details http://www.daterangepicker.com/#options or https://github.com/dangrossman/bootstrap-daterangepicker
 
 ```
-<?= $form->field($model, 'date')->widget(DatePicker::className(), [
+<?= $form->field($model, 'date')->widget(DateRangePicker::className(), [
+    'start_attribute' => 'start',
+    'end_attribute' => 'end',
+    'model' => $model,
     'options' => [
         'class' => 'form-control',
     ],
