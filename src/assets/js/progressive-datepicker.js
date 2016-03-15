@@ -5,7 +5,8 @@
             if (!Modernizr.touch || !Modernizr.inputtypes || !Modernizr.inputtypes.date) {
                 try {
                     el.attr('type', 'text');
-                } catch (e) {}
+                } catch (e) {
+                }
                 el.val(value);
                 el.datepicker(options);
             }
