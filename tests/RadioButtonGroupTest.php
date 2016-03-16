@@ -18,7 +18,7 @@ class RadioButtonGroupTest extends TestCase
             'items' => [1 => 'Yes', 0 => 'No'],
         ]);
 
-        $expected = '<div id="radio_button_test" class="btn-group radio-button-group" data-field="#test"><button type="button" class="btn btn-default" data-value="1">Yes</button><button type="button" class="active btn btn-success" data-value="0">No</button></div><input type="hidden" id="test" name="test-widget-name">';
+        $expected = '<div class="radio-button-group"><div id="radio_button_test" class="btn-group" data-field="#test"><button type="button" class="btn btn-default" data-value="1">Yes</button><button type="button" class="active btn btn-success" data-value="0">No</button></div></div><input type="hidden" id="test" name="test-widget-name">';
         $this->assertEquals($expected, $out);
     }
 
@@ -38,7 +38,7 @@ class RadioButtonGroupTest extends TestCase
             ]
         ]);
 
-        $expected = '<div id="radio_button_test" class="btn-group radio-button-group foobar" data-field="#test"><button type="button" class="btn btn-primary" data-value="1">Yes</button><button type="button" class="btn btn-primary active" data-value="0">No</button><button type="button" class="btn btn-primary" data-value="3">Maybe</button></div><input type="hidden" id="test" class="test-class" name="test-widget-name">';
+        $expected = '<div class="radio-button-group foobar"><div id="radio_button_test" class="btn-group" data-field="#test"><button type="button" class="btn btn-primary" data-value="1">Yes</button><button type="button" class="btn btn-primary active" data-value="0">No</button><button type="button" class="btn btn-primary" data-value="3">Maybe</button></div></div><input type="hidden" id="test" class="test-class" name="test-widget-name">';
         $this->assertEquals($expected, $out);
     }
 
@@ -57,7 +57,7 @@ class RadioButtonGroupTest extends TestCase
             ],
         ]);
 
-        $expected = '<div id="radio_button_w0" class="btn-group radio-button-group" data-field="#w0"><button type="button" class="btn btn-success active" data-value="1">Yes</button><button type="button" class="btn btn-danger" data-value="0">No</button><button type="button" class="btn btn-warning" data-value="3">Maybe</button></div><input type="hidden" id="w0" name="test-widget-name" value="1">';
+        $expected = '<div class="radio-button-group"><div id="radio_button_w0" class="btn-group" data-field="#w0"><button type="button" class="btn btn-success active" data-value="1">Yes</button><button type="button" class="btn btn-danger" data-value="0">No</button><button type="button" class="btn btn-warning" data-value="3">Maybe</button></div></div><input type="hidden" id="w0" name="test-widget-name" value="1">';
         $this->assertEquals($expected, $out);
     }
 
@@ -72,7 +72,7 @@ class RadioButtonGroupTest extends TestCase
             'items' => Payment::$statuses
         ]);
 
-        $expected = '<div id="radio_button_payment-status_id" class="btn-group radio-button-group" data-field="#payment-status_id"><button type="button" class="btn btn-default" data-value="10">Active</button><button type="button" class="active btn btn-success" data-value="20">Inactive</button></div><input type="hidden" id="payment-status_id" name="Payment[status_id]" value="20">';
+        $expected = '<div class="radio-button-group"><div id="radio_button_payment-status_id" class="btn-group" data-field="#payment-status_id"><button type="button" class="btn btn-default" data-value="10">Active</button><button type="button" class="active btn btn-success" data-value="20">Inactive</button></div></div><input type="hidden" id="payment-status_id" name="Payment[status_id]" value="20">';
         $this->assertEquals($expected, $out);
     }
 
