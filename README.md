@@ -1,7 +1,9 @@
 # Webtools Widget Library for Yii2
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/?branch=master)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/travis/badams/microsoft-translator/master.svg?style=flat-square)](https://travis-ci.org/webtoolsnz/yii2-widgets)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/badams/microsoft-translator.svg?style=flat-square)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/badams/microsoft-translator.svg?style=flat-square)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets)
 
 A collection of reusable widgets for Yii2.
 
