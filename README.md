@@ -1,6 +1,7 @@
 # Webtools Widget Library for Yii2
 
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/webtoolsnz/yii2-widgets/?branch=master)
 
 A collection of reusable widgets for Yii2.
 
