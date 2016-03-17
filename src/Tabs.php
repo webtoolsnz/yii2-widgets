@@ -27,6 +27,11 @@ class Tabs extends \yii\bootstrap\Tabs
     public function run()
     {
         TabsAsset::register($this->getView());
+        
+        if (!$this->hasActiveTab() && !empty($this->items)) {
+            reset($this->items);
+            $this->items[key($this->items)]['active'] = true;
+        }
 
         return parent::run();
     }
