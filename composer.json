@@ -19,6 +19,7 @@
     }
   ],
   "require": {
+    "composer-plugin-api" : "^1.0.0",
     "yiisoft/yii2": "^2.0.6",
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-jui" : "*",
