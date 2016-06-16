@@ -101,4 +101,22 @@ JS;
         $this->assertContains('maps.googleapis.com/maps/api/js?libraries=places', $content);
         $this->assertContains('google-place-search.js', $content);
     }
+
+    public function testApiKey()
+    {
+        Yii::$app->params['google.api.key'] = 'TEST_API_KEY';
+
+        GooglePlaceSearch::widget([
+            'id' => 'test',
+            'name' => 'test-widget-name',
+            'country' => 'au',
+            'map' => ['selector' => '#map']
+        ]);
+
+        $view = Yii::$app->getView();
+
+        $expected = '//maps.googleapis.com/maps/api/js?libraries=places&key=TEST_API_KEY';
+        $this->assertContains($expected, VarDumper::dumpAsString($view->assetBundles['webtoolsnz\\widgets\\GooglePlaceSearchAsset']->js));
+
+    }
 }

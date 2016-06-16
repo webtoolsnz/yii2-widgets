@@ -19,6 +19,8 @@ use yii\widgets\InputWidget;
  */
 class GooglePlaceSearch extends InputWidget
 {
+    public $key;
+
     public $clientOptions = [];
 
     public $options = [];
@@ -58,6 +60,8 @@ class GooglePlaceSearch extends InputWidget
     protected function registerClientScript()
     {
         $view = $this->getView();
+        $key = $this->key ? $this->key : ArrayHelper::getValue(Yii::$app->params, 'google.api.key', null);
+        GooglePlaceSearchAsset::$apiKey = $key;
         GooglePlaceSearchAsset::register($view);
 
         $id = $this->options['id'];

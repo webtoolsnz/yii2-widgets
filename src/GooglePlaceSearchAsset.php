@@ -7,8 +7,9 @@ use yii\web\AssetBundle;
 
 class GooglePlaceSearchAsset extends AssetBundle
 {
+    public static $apiKey;
+
     public $js = [
-        '//maps.googleapis.com/maps/api/js?libraries=places',
         'js/google-place-search.js',
     ];
 
@@ -18,6 +19,14 @@ class GooglePlaceSearchAsset extends AssetBundle
 
     public function init()
     {
+        $googleUrl = '//maps.googleapis.com/maps/api/js?libraries=places';
+
+        if (self::$apiKey) {
+            $googleUrl .= '&key='.self::$apiKey;
+        }
+
+        array_unshift($this->js, $googleUrl);
+
         $this->sourcePath = __DIR__ . '/assets';
         parent::init();
     }
