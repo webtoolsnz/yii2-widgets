@@ -40,7 +40,7 @@ class RadioButtonGroup extends InputWidget
     /**
      * @var bool setting this to true is the same as using comparisonStrict only when value is null or an empty string
      */
-    public $ignoreEmpty = true;
+    public $ignoreEmpty = false;
 
     /**
      * @var array
