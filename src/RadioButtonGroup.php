@@ -33,6 +33,16 @@ class RadioButtonGroup extends InputWidget
     public $inputOptions = [];
 
     /**
+     * @var bool use strict comparison (===) when comparing values
+     */
+    public $comparisonStrict = false;
+
+    /**
+     * @var bool setting this to true is the same as using comparisonStrict only when value is null or an empty string
+     */
+    public $ignoreEmpty = true;
+
+    /**
      * @var array
      */
     public $items = [];
@@ -68,7 +78,9 @@ class RadioButtonGroup extends InputWidget
     public function getButtonClass($value)
     {
         $selectedValue = $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value;
-        $state = ($value == $selectedValue ? self::STATE_ACTIVE : self::STATE_DEFAULT);
+        $state = ($this->comparisonStrict || (($selectedValue === null || $selectedValue === '') && $this->ignoreEmpty)
+            ? $value === $selectedValue
+            : $value == $selectedValue) ? self::STATE_ACTIVE : self::STATE_DEFAULT;
         $buttonOptions = isset($this->itemOptions['buttons'][$value]) ? $this->itemOptions['buttons'][$value] : null;
 
         if ($buttonOptions && isset($buttonOptions[$state])) {
