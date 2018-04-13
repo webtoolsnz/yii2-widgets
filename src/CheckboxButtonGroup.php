@@ -160,13 +160,22 @@ class CheckboxButtonGroup extends InputWidget
         $buttons = '';
 
         foreach ($this->items as $value => $label) {
-            $buttons .= Html::button($label, [
-                'data-value' => $value,
-                'class' => $this->getButtonClass(
-                    $value,
-                    $this->hasModel() ? Html::getAttributeValue($this->model, $this->attribute) : $this->value
-                ),
-            ]);
+            $buttonOptions = ArrayHelper::merge(
+                    [
+                    'data-value' => $value,
+                    'class' => $this->getButtonClass(
+                        $value,
+                        $this->hasModel()
+                            ? Html::getAttributeValue($this->model, $this->attribute)
+                            : $this->value
+                    ),
+                ],
+                isset($this->itemOptions['buttons'][$value]) ? $this->itemOptions['buttons'][$value] : []
+            );
+            ArrayHelper::remove($buttonOptions, self::STATE_ACTIVE);
+            ArrayHelper::remove($buttonOptions, self::STATE_DEFAULT);
+
+            $buttons .= Html::button($label, $buttonOptions);
         }
 
         $class = 'btn-group checkbox-button-group';
