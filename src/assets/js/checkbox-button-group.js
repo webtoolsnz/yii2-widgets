@@ -26,7 +26,7 @@
                 }).each(function () {
                     this.checked = !this.checked;
                     $(btn).attr('class', this.checked ? activeState : defaultState);
-                });
+                }).trigger('change');
 
             });
         });
