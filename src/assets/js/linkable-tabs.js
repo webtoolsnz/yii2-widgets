@@ -9,7 +9,9 @@ jQuery(function () {
     $('.wt-tabs.nav-tabs a').on('shown.bs.tab', function (e) {
         var scrollPos = $('body').scrollTop();
         window.location.hash = e.target.hash;
-        $('html,body').scrollTop(scrollPos);
+        if (scrollPos !== 0) {
+           $('html,body').scrollTop(scrollPos);
+        }
     });
 
     // Append Tab hash to any forms that reside within a tab.
