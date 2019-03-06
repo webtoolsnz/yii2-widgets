@@ -28,7 +28,7 @@
                 $('<option></option>').text(options.otherText)
             );
 
-            if (input.val()) {
+            var inputChange = function () {
                 var selectedOption = select.children().filter(function () { return $(this).text() == input.val(); });
                 if (selectedOption.length) {
                     input.hide();
@@ -39,7 +39,11 @@
                             $(this).prop('selected', true);
                         }
                     });
+                    input.show();
                 }
+            }
+            if (input.val()) {
+                inputChange();
             } else {
                 input.hide()
             }
@@ -53,6 +57,9 @@
                     input.val(select.val());
                 }
             });
+            input.on('change', function () {
+                inputChange();
+            })
 
         });
     }
