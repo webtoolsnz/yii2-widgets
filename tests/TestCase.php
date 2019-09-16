@@ -3,8 +3,6 @@
 namespace tests;
 
 use yii\helpers\ArrayHelper;
-use yii\web\AssetManager;
-use yii\web\View;
 
 /**
  * This is the base class for all tests
@@ -59,6 +57,10 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             'id' => 'test-app',
             'basePath' => __DIR__,
             'vendorPath' => $this->getVendorPath(),
+            'aliases' => [
+                '@bower' => '@vendor/bower-asset',
+                '@npm' => '@vendor/npm-asset',
+            ],
             'components' => [
                 'request' => [
                     'cookieValidationKey' => '123',

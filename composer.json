@@ -37,12 +37,6 @@
       "webtoolsnz\\widgets\\": "src"
     }
   },
-  "config": {
-    "process-timeout": 1800,
-    "fxp-asset": {
-      "enabled": false
-    }
-  },
   "scripts": {
     "test": "./vendor/bin/phpunit --coverage-text;"
   },
