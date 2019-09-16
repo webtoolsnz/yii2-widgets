@@ -60,7 +60,7 @@ class GooglePlaceSearchTest extends TestCase
         $expected = <<<JS
 jQuery(\'#test\').googlePlaceSearch({\"country\":\"au\",\"map\":{\"selector\":null},\"autocomplete\":{\"componentRestrictions\":{\"country\":\"au\"}}});
 JS;
-        $this->assertContains($expected, VarDumper::dumpAsString($view->js));
+        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->js));
     }
 
     public function testRegisterClientScriptMap()
@@ -81,7 +81,7 @@ JS;
         $expected = <<<JS
 jQuery(\'#test\').googlePlaceSearch({\"country\":\"au\",\"map\":{\"selector\":\"#map\"},\"autocomplete\":{\"componentRestrictions\":{\"country\":\"au\"}}});
 JS;
-        $this->assertContains($expected, VarDumper::dumpAsString($view->js));
+        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->js));
     }
 
     public function testAssetRegister()
@@ -97,9 +97,9 @@ JS;
 
         $content = $view->renderFile('@tests/views/layouts/raw.php');
 
-        $this->assertContains('jquery.js', $content);
-        $this->assertContains('maps.googleapis.com/maps/api/js?libraries=places', $content);
-        $this->assertContains('google-place-search.js', $content);
+        $this->assertStringContainsString('jquery.js', $content);
+        $this->assertStringContainsString('maps.googleapis.com/maps/api/js?libraries=places', $content);
+        $this->assertStringContainsString('google-place-search.js', $content);
     }
 
     public function testApiKey()
@@ -116,7 +116,7 @@ JS;
         $view = Yii::$app->getView();
 
         $expected = '//maps.googleapis.com/maps/api/js?libraries=places&key=TEST_API_KEY';
-        $this->assertContains($expected, VarDumper::dumpAsString($view->assetBundles['webtoolsnz\\widgets\\GooglePlaceSearchAsset']->js));
+        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->assetBundles['webtoolsnz\\widgets\\GooglePlaceSearchAsset']->js));
 
     }
 }

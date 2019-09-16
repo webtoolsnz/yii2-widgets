@@ -49,7 +49,7 @@ class Wysihtml5Test extends TestCase
         $expected = <<<JS
 jQuery(\'#test\').wysihtml5({\"image\":false});
 JS;
-        $this->assertContains($expected, VarDumper::dumpAsString($view->js));
+        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->js));
     }
 
     public function testAssetRegister()
@@ -65,9 +65,9 @@ JS;
 
         $content = $view->renderFile('@tests/views/layouts/raw.php');
 
-        $this->assertContains('bootstrap.css', $content);
-        $this->assertContains('bootstrap3-wysihtml5.css', $content);
-        $this->assertContains('bootstrap.js', $content);
-        $this->assertContains('bootstrap3-wysihtml5.all.min.js', $content);
+        $this->assertStringContainsString('bootstrap.css', $content);
+        $this->assertStringContainsString('bootstrap3-wysihtml5.css', $content);
+        $this->assertStringContainsString('bootstrap.js', $content);
+        $this->assertStringContainsString('bootstrap3-wysihtml5.all.min.js', $content);
     }
 }

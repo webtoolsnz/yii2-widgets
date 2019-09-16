@@ -89,7 +89,7 @@ class RadioButtonGroupTest extends TestCase
         $expected = <<<JS
 jQuery(\'#radio_button_w1\').radioButtonGroup({\"activeState\":\"active btn btn-success\",\"defaultState\":\"btn btn-default\",\"buttons\":[]});
 JS;
-        $this->assertContains($expected, VarDumper::dumpAsString($view->js));
+        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->js));
     }
 
     public function testAssetRegister()
@@ -105,9 +105,9 @@ JS;
 
         $content = $view->renderFile('@tests/views/layouts/raw.php');
 
-        $this->assertContains('bootstrap.css', $content);
-        $this->assertContains('radio-button-group.css', $content);
-        $this->assertContains('bootstrap.js', $content);
-        $this->assertContains('radio-button-group.js', $content);
+        $this->assertStringContainsString('bootstrap.css', $content);
+        $this->assertStringContainsString('radio-button-group.css', $content);
+        $this->assertStringContainsString('bootstrap.js', $content);
+        $this->assertStringContainsString('radio-button-group.js', $content);
     }
 }

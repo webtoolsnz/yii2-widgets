@@ -20,6 +20,6 @@ class BootBoxAssetTest extends TestCase
         $this->assertTrue($view->assetBundles['webtoolsnz\\widgets\\BootBoxAsset'] instanceof AssetBundle);
 
         $content = $view->renderFile('@tests/views/layouts/raw.php');
-        $this->assertContains('bootbox.js', $content);
+        $this->assertStringContainsString('bootbox.js', $content);
     }
 }

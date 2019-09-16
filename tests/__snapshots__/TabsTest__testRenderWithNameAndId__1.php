@@ -1,4 +1,4 @@
-
+<?php return '
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,8 @@
 <div id="w2-tab0" class="tab-pane">Baz Content</div></div><script src="/2/jquery.js"></script>
 <script src="/1/js/bootstrap.js"></script>
 <script src="/0/js/linkable-tabs.js"></script>
-<script type="text/javascript">jQuery(document).ready(function () {
-jQuery('#w2').tab();
+<script>jQuery(function ($) {
+jQuery(\'#w2\').tab();
 });</script></body>
 </html>
+';

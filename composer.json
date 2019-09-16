@@ -19,31 +19,31 @@
     }
   ],
   "require": {
-    "yiisoft/yii2": "^2.0.7",
+    "yiisoft/yii2": "^2.0.13",
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-jui" : "*",
-    "symfony/intl": "^2.7",
-    "symfony/yaml": "^2.8",
     "bower-asset/font-awesome": "^4.3",
     "bower-asset/signature_pad": "1.5.3",
-	"bower-asset/bootbox.js": "4.4.0"
+	"bower-asset/bootbox.js": "4.4.0",
+    "symfony/intl": "^4.3",
+    "php": ">=7.2.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4.7.7",
-    "phpdocumentor/reflection-docblock" : "^2.0"
+    "phpunit/phpunit": "^8.3.5",
+    "spatie/phpunit-snapshot-assertions": "^2.1"
   },
   "autoload": {
     "psr-4": {
       "webtoolsnz\\widgets\\": "src"
     }
   },
-  "extra": {
-    "asset-installer-paths": {
-      "npm-asset-library": "vendor/npm",
-      "bower-asset-library": "vendor/bower"
-    }
-  },
   "scripts": {
-    "test": "./vendor/bin/phpunit --coverage-text --coverage-html=build;"
-  }
+    "test": "./vendor/bin/phpunit --coverage-text;"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
 }
