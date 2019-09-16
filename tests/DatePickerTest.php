@@ -62,7 +62,7 @@ class DatePickerTest extends TestCase
         $expected = <<<JS
 jQuery(\'#test\').progressiveDatePicker(\'\', {\"dateFormat\":\"M d, yy\"});
 JS;
-        $this->assertContains($expected, VarDumper::dumpAsString($view->js));
+        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->js));
     }
 
     public function testAssetRegister()
@@ -82,10 +82,10 @@ JS;
 
         $content = $view->renderFile('@tests/views/layouts/raw.php');
 
-        $this->assertContains('jquery.js', $content);
-        $this->assertContains('jquery-ui.js', $content);
-        $this->assertContains('modernizr.js', $content);
-        $this->assertContains('progressive-datepicker.js', $content);
+        $this->assertStringContainsString('jquery.js', $content);
+        $this->assertStringContainsString('jquery-ui.js', $content);
+        $this->assertStringContainsString('modernizr.js', $content);
+        $this->assertStringContainsString('progressive-datepicker.js', $content);
 
     }
 }

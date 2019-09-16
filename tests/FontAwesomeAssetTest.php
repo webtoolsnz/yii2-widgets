@@ -20,6 +20,6 @@ class FontAwesomeAssetTest extends TestCase
         $this->assertTrue($view->assetBundles['webtoolsnz\\widgets\\FontAwesomeAsset'] instanceof AssetBundle);
 
         $content = $view->renderFile('@tests/views/layouts/raw.php');
-        $this->assertContains('font-awesome.min.css', $content);
+        $this->assertStringContainsString('font-awesome.min.css', $content);
     }
 }
