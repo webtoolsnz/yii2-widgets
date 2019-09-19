@@ -2,7 +2,7 @@
 
 The `RadioButtonGroup` widget renders a list of radio toggle buttons in the form of bootstrap button group. See the [documentation](http://getbootstrap.com/components/#btn-groups)  for more styling information.
 
-####Basic usage with default settings:
+#### Basic usage with default settings:
 ~~~
 use webtoolsnz\widgets\RadioButtonGroup;
 
@@ -13,7 +13,7 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::class, [
 ![screenshot](/docs/images/radio-button-group1.png?raw=true)
 
 
-####Customised active state (blue) and increased size:
+#### Customised active state (blue) and increased size:
 ~~~
 use webtoolsnz\widgets\RadioButtonGroup;
 
@@ -27,7 +27,7 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::class, [
 ~~~
 ![screenshot](/docs/images/radio-button-group2.png?raw=true)
 
-####Customised label states based on value:
+#### Customised label states based on value:
 Green for yes, red for no, orange for maybe.
 ~~~
 use webtoolsnz\widgets\RadioButtonGroup;
@@ -45,7 +45,7 @@ $form->field($model, 'status_id')->widget(RadioButtonGroup::class, [
 ![screenshot](/docs/images/radio-button-group3.png?raw=true)
 
 
-####Advanced itemOptions Example
+#### Advanced itemOptions Example
 This advanced example shows how to:
  - Control the visibility of other elements on the page using the `showElements` and `hideElements` options.
  - Disable specific buttons using the `disabled` option.
