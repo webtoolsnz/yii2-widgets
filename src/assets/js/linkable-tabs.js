@@ -8,7 +8,7 @@ jQuery(function () {
     // Change hash for page-reload
     $('.wt-tabs.nav-tabs a').on('shown.bs.tab', function (e) {
         var scrollPos = $(window).scrollTop();
-        window.location.hash = e.target.hash;
+        history.pushState(null, null, e.target.hash);
         if (scrollPos !== 0) {
            $('html,body').scrollTop(scrollPos);
         }
