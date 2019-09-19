@@ -6,10 +6,10 @@
 
 namespace webtoolsnz\widgets;
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
-use Yii;
 
 /**
  * RadioButton renders a bootstrap style button group for radio options
@@ -100,10 +100,13 @@ class RadioButtonGroup extends InputWidget
         $buttons = '';
 
         foreach ($this->items as $value => $label) {
+            $buttonOptions = ArrayHelper::getValue($this->itemOptions, ['buttons', $value], []);
             $buttons .= Html::button($label, [
                 'data-value' => $value,
                 'class' => $this->getButtonClass($value),
-                'disabled' => $this->disabled,
+                'disabled' =>  ArrayHelper::getValue($buttonOptions, 'disabled', $this->disabled),
+                'data-show' => ArrayHelper::getValue($buttonOptions, 'showElements'),
+                'data-hide' => ArrayHelper::getValue($buttonOptions, 'hideElements'),
             ]);
         }
 

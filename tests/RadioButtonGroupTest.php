@@ -1,15 +1,21 @@
 <?php
 namespace tests;
 
+use Spatie\Snapshots\Drivers\XmlDriver;
 use Yii;
 use tests\models\Payment;
 use yii\helpers\VarDumper;
 use yii\web\AssetBundle;
 use webtoolsnz\widgets\RadioButtonGroup;
 use webtoolsnz\widgets\RadioButtonGroupAsset;
+use Spatie\Snapshots\MatchesSnapshots;
+use yii\web\JsExpression;
+
 
 class RadioButtonGroupTest extends TestCase
 {
+    use MatchesSnapshots;
+
     public function testRenderWithNameAndId()
     {
         $out = RadioButtonGroup::widget([
@@ -18,8 +24,7 @@ class RadioButtonGroupTest extends TestCase
             'items' => [1 => 'Yes', 0 => 'No'],
         ]);
 
-        $expected = '<div class="radio-button-group"><div id="radio_button_test" class="btn-group" data-field="#test"><button type="button" class="btn btn-default" data-value="1">Yes</button><button type="button" class="active btn btn-success" data-value="0">No</button></div></div><input type="hidden" id="test" name="test-widget-name">';
-        $this->assertEquals($expected, $out);
+        $this->assertMatchesSnapshot($out);
     }
 
     public function testRenderWithOptions()
@@ -31,15 +36,27 @@ class RadioButtonGroupTest extends TestCase
             'options' => ['class' => 'foobar'],
             'itemOptions' => [
                 'defaultState' => 'btn btn-primary',
-                'activeState' => 'btn btn-primary active'
+                'activeState' => 'btn btn-primary active',
+                'buttons' => [
+                    1 => [
+                        'showElements' => '.show-if-yes',
+                        'hideElements' => '.show-if-no',
+                        'onSelect' => new JsExpression('function (e) {console.log(e);}')
+                    ],
+                    0 => [
+                        'showElements' => '.show-if-no',
+                        'hideElements' => '.show-if-yes'
+                    ],
+                    3 => ['disabled' => true],
+
+                ]
             ],
             'inputOptions' => [
                 'class' => 'test-class',
             ]
         ]);
 
-        $expected = '<div class="radio-button-group foobar"><div id="radio_button_test" class="btn-group" data-field="#test"><button type="button" class="btn btn-primary" data-value="1">Yes</button><button type="button" class="btn btn-primary active" data-value="0">No</button><button type="button" class="btn btn-primary" data-value="3">Maybe</button></div></div><input type="hidden" id="test" class="test-class" name="test-widget-name">';
-        $this->assertEquals($expected, $out);
+        $this->assertMatchesSnapshot($out);
     }
 
     public function testRenderWithButtonOptions()
@@ -57,8 +74,7 @@ class RadioButtonGroupTest extends TestCase
             ],
         ]);
 
-        $expected = '<div class="radio-button-group"><div id="radio_button_w0" class="btn-group" data-field="#w0"><button type="button" class="btn btn-success active" data-value="1">Yes</button><button type="button" class="btn btn-danger" data-value="0">No</button><button type="button" class="btn btn-warning" data-value="3">Maybe</button></div></div><input type="hidden" id="w0" name="test-widget-name" value="1">';
-        $this->assertEquals($expected, $out);
+        $this->assertMatchesSnapshot($out);
     }
 
     public function testRenderWithModel()
@@ -72,8 +88,7 @@ class RadioButtonGroupTest extends TestCase
             'items' => Payment::$statuses
         ]);
 
-        $expected = '<div class="radio-button-group"><div id="radio_button_payment-status_id" class="btn-group" data-field="#payment-status_id"><button type="button" class="btn btn-default" data-value="10">Active</button><button type="button" class="active btn btn-success" data-value="20">Inactive</button></div></div><input type="hidden" id="payment-status_id" name="Payment[status_id]" value="20">';
-        $this->assertEquals($expected, $out);
+        $this->assertMatchesSnapshot($out);
     }
 
     public function testRegisterClientScript()
@@ -86,11 +101,9 @@ class RadioButtonGroupTest extends TestCase
         $widget->setView($view);
         $method->invoke($widget);
 
-        $expected = <<<JS
-jQuery(\'#radio_button_w1\').radioButtonGroup({\"activeState\":\"active btn btn-success\",\"defaultState\":\"btn btn-default\",\"buttons\":[]});
-JS;
-        $this->assertStringContainsString($expected, VarDumper::dumpAsString($view->js));
+        $this->assertMatchesSnapshot(VarDumper::dumpAsString($view->js));
     }
+
 
     public function testAssetRegister()
     {

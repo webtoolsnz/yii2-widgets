@@ -13,14 +13,29 @@
 
             input.on('change', options.change).trigger('change');
 
-            el.find('button').on('click', function () {
-                var value = $(this).data('value'),
+            el.find('button').on('click', function (e) {
+                var button = $(this),
+                    value = button.data('value'),
+                    oldValue = input.val(),
                     buttonOptions = options.buttons[value],
                     activeState = buttonOptions && buttonOptions['activeState'] ? buttonOptions['activeState'] : options['activeState'],
-                    defaultState = buttonOptions && buttonOptions['defaultState'] ? buttonOptions['defaultState'] : options['defaultState'];
+                    defaultState = buttonOptions && buttonOptions['defaultState'] ? buttonOptions['defaultState'] : options['defaultState'],
+                    showElements = $(button.data('show')),
+                    hideElements = $(button.data('hide'));
+
+                if (value == oldValue) {
+                    return;
+                }
+
+                showElements.slideDown();
+                hideElements.slideUp();
+
+                if (buttonOptions && typeof(buttonOptions.onSelect) === 'function') {
+                    buttonOptions.onSelect(e);
+                }
 
                 input.val(value).trigger('change');
-                $(this).attr('class', activeState).siblings().each(function () {
+                button.attr('class', activeState).siblings().each(function () {
                     var buttonOptions = options.buttons[$(this).data('value')],
                         defaultState = buttonOptions && buttonOptions['defaultState'] ? buttonOptions['defaultState'] : options['defaultState'];
                     $(this).attr('class', defaultState);
