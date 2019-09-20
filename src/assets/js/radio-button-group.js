@@ -16,16 +16,11 @@
             el.find('button').on('click', function (e) {
                 var button = $(this),
                     value = button.data('value'),
-                    oldValue = input.val(),
                     buttonOptions = options.buttons[value],
                     activeState = buttonOptions && buttonOptions['activeState'] ? buttonOptions['activeState'] : options['activeState'],
                     defaultState = buttonOptions && buttonOptions['defaultState'] ? buttonOptions['defaultState'] : options['defaultState'],
                     showElements = $(button.data('show')),
                     hideElements = $(button.data('hide'));
-
-                if (value == oldValue) {
-                    return;
-                }
 
                 showElements.slideDown();
                 hideElements.slideUp();
