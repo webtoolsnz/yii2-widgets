@@ -3,6 +3,7 @@
 namespace webtoolsnz\widgets;
 
 use yii\web\AssetBundle;
+use yii\helpers\ArrayHelper;
 
 
 class GooglePlaceSearchAsset extends AssetBundle
@@ -19,11 +20,11 @@ class GooglePlaceSearchAsset extends AssetBundle
 
     public function init()
     {
-        $googleUrl = '//maps.googleapis.com/maps/api/js?libraries=places';
-
-        if (self::$apiKey) {
-            $googleUrl .= '&key='.self::$apiKey;
+        if (!self::$apiKey) {
+            self::$apiKey = ArrayHelper::getValue(\Yii::$app->params, 'google.api.key', null);
         }
+
+        $googleUrl = sprintf('//maps.googleapis.com/maps/api/js?libraries=places&key=%s', self::$apiKey);
 
         array_unshift($this->js, $googleUrl);
 
