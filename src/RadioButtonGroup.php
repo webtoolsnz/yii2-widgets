@@ -110,10 +110,8 @@ class RadioButtonGroup extends InputWidget
             ]);
         }
 
-        $class = 'radio-button-group';
-        if (isset($this->options['class'])) {
-            $class .= ' '.$this->options['class'];
-        }
+        Html::addCssClass($this->options, 'radio-button-group');
+        Html::removeCssClass($this->options, 'form-control');
 
         echo Html::tag(
             'div',
@@ -123,7 +121,7 @@ class RadioButtonGroup extends InputWidget
                 'data-field' => '#'.$this->options['id'],
             ]),
             [
-                'class' => $class,
+                'class' => $this->options['class'],
             ]
         );
 

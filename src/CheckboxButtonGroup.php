@@ -178,13 +178,11 @@ class CheckboxButtonGroup extends InputWidget
             $buttons .= Html::button($label, $buttonOptions);
         }
 
-        $class = 'btn-group checkbox-button-group';
-        if (isset($this->options['class'])) {
-            $class .= ' '.$this->options['class'];
-        }
+        Html::addCssClass($this->options, ['btn-group' , 'checkbox-button-group']);
+        Html::removeCssClass($this->options, 'form-control');
 
         return Html::tag('div', $buttons, [
-            'class' => $class,
+            'class' => $this->options['class'],
             'style' => 'display: none;',
             'id' => $this->widgetId.'-buttons',
         ]);
