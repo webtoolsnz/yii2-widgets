@@ -36,6 +36,8 @@
                     $(this).attr('class', defaultState);
                 });
             });
+
+            el.find('button[class="' + options.activeState + '"]').click();
         });
     };
 })(window, jQuery);
