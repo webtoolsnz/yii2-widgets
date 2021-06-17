@@ -129,8 +129,10 @@ class DatePicker extends InputWidget
             } catch(\yii\base\InvalidParamException $e) {
                 // ignore exception and keep original value if it is not a valid date
             }
+            return Html::encode($value);
         }
 
-        return Html::encode($value);
+        return $value; // '' or null
+
     }
 }
