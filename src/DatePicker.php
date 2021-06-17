@@ -131,6 +131,6 @@ class DatePicker extends InputWidget
             }
         }
 
-        return $value;
+        return Html::encode($value);
     }
 }
