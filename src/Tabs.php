@@ -24,7 +24,7 @@ class Tabs extends \yii\bootstrap5\Tabs
         $this->setItemIds();
     }
 
-    public function run()
+    public function run(): string
     {
         TabsAsset::register($this->getView());
         

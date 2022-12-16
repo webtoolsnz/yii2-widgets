@@ -72,7 +72,7 @@ class DatePicker extends InputWidget
     /**
      * @inheritdoc
      */
-    public function run()
+    public function run(): string
     {
         if ($this->hasModel()) {
             $input = Html::activeTextInput($this->model, $this->attribute, $this->options);

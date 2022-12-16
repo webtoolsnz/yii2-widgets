@@ -35,7 +35,7 @@ class SelectOther extends InputWidget
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
      */
-    public function run()
+    public function run(): string
     {
         $readOnly = isset($this->options['readOnly']) && $this->options['readOnly'] == true;
         $disabled = isset($this->options['disabled'])

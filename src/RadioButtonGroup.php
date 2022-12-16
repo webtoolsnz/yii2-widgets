@@ -95,7 +95,7 @@ class RadioButtonGroup extends InputWidget
     /**
      * @inheritdoc
      */
-    public function run()
+    public function run(): string
     {
         $buttons = '';
 

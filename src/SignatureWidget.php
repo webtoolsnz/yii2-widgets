@@ -31,7 +31,7 @@ class SignatureWidget extends InputWidget
     /**
      * @inheritdoc
      */
-    public function run()
+    public function run(): string
     {
         Html::addCssClass($this->inputOptions, 'form-control');
         $this->inputOptions['id'] = $this->widgetId;
