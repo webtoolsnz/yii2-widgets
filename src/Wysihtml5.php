@@ -50,7 +50,7 @@ class Wysihtml5 extends InputWidget
     /**
      * @inheritdoc
      */
-    public function run(): string
+    public function run()
     {
         if ($this->hasModel()) {
             echo Html::activeTextArea($this->model, $this->attribute, $this->options);
