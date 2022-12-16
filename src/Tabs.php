@@ -11,7 +11,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
 
-class Tabs extends \yii\bootstrap\Tabs
+class Tabs extends \yii\bootstrap5\Tabs
 {
     /**
      * Initializes the widget.

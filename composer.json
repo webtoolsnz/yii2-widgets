@@ -19,12 +19,12 @@
     }
   ],
   "require": {
-    "yiisoft/yii2": "^2.0.13",
-    "yiisoft/yii2-bootstrap": "*",
+    "yiisoft/yii2": "^2.0",
+    "yiisoft/yii2-bootstrap5": "*",
     "yiisoft/yii2-jui" : "*",
     "bower-asset/font-awesome": "^4.3",
     "bower-asset/signature_pad": "1.5.3",
-	"bower-asset/bootbox.js": "4.4.0",
+	  "bower-asset/bootbox.js": "^6.0",
     "symfony/intl": "^4.3",
     "php": ">=7.2.0"
   },

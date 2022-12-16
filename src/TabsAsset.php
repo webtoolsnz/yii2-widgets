@@ -19,8 +19,8 @@ class TabsAsset extends AssetBundle
     ];
 
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
+        'yii\bootstrap5\BootstrapAsset',
+        'yii\bootstrap5\BootstrapPluginAsset',
         'yii\web\JqueryAsset',
     ];
 

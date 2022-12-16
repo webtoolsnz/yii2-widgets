@@ -26,6 +26,6 @@ class BootBoxAsset extends AssetBundle
     ];
 
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap5\BootstrapAsset',
     ];
 }
