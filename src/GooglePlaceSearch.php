@@ -46,7 +46,7 @@ class GooglePlaceSearch extends InputWidget
         Html::addCssClass($this->options, 'form-control');
     }
 
-    public function run(): string
+    public function run()
     {
         if ($this->hasModel()) {
             echo Html::activeTextInput($this->model, $this->attribute, $this->options);

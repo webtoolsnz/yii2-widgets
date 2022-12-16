@@ -36,7 +36,7 @@ class CurrencyInput extends InputWidget
         }
     }
 
-    public function run(): string
+    public function run()
     {
         echo '<div class="input-group"><div class="input-group-addon">'.$this->currencySymbol.'</div>';
 

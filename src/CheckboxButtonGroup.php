@@ -109,7 +109,7 @@ class CheckboxButtonGroup extends InputWidget
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
      */
-    public function run(): string
+    public function run()
     {
         $this->registerClientScript();
         return Html::tag(
