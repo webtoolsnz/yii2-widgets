@@ -30,7 +30,7 @@ You can wrap any addons around the field using input template.
 
 ```
 <?= $form->field($model, 'date', [
-    'inputTemplate' => '<div class="input-group"><div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>{input}</div>',
+    'inputTemplate' => '<div class="input-group"><div class="input-group-prepend"><span class="glyphicon glyphicon-calendar"></span></div>{input}</div>',
 ])->widget(DatePicker::className(), [
     'options' => ['class' => 'form-control'],
 ]); ?>

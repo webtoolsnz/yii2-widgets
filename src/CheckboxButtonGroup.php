@@ -49,7 +49,7 @@ class CheckboxButtonGroup extends InputWidget
 
         $this->itemOptions = array_merge([
             self::STATE_ACTIVE => 'active btn btn-success',
-            self::STATE_DEFAULT => 'btn btn-default',
+            self::STATE_DEFAULT => 'btn btn-secondary',
             'buttons' => [],
         ], $this->itemOptions);
     }

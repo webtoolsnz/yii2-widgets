@@ -14,7 +14,7 @@ class CurrencyInputTest extends TestCase
             'value' => '500',
         ]);
 
-        $expected = '<div class="input-group"><div class="input-group-addon">$</div><input type="number" id="test" class="form-control" name="test-widget-name" value="500" step="0.01" min="0"></div>';
+        $expected = '<div class="input-group"><div class="input-group-prepend"><span class="input-group-text">$</span></div><input type="number" id="test" class="form-control" name="test-widget-name" value="500" step="0.01" min="0"></div>';
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
@@ -31,7 +31,7 @@ class CurrencyInputTest extends TestCase
             ]
         ]);
 
-        $expected = '<div class="input-group"><div class="input-group-addon">$</div><input type="number" id="test" class="foo form-control" name="test-widget-name" value="100" step="10" min="20"></div>';
+        $expected = '<div class="input-group"><div class="input-group-prepend"><span class="input-group-text">$</span></div><input type="number" id="test" class="foo form-control" name="test-widget-name" value="100" step="10" min="20"></div>';
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
@@ -45,7 +45,7 @@ class CurrencyInputTest extends TestCase
             'attribute' => 'amount',
         ]);
 
-        $expected = '<div class="input-group"><div class="input-group-addon">$</div><input type="number" id="payment-amount" class="form-control" name="Payment[amount]" value="250.25" step="0.01" min="0"></div>';
+        $expected = '<div class="input-group"><div class="input-group-prepend"><span class="input-group-text">$</span></div><input type="number" id="payment-amount" class="form-control" name="Payment[amount]" value="250.25" step="0.01" min="0"></div>';
 
         $this->assertEqualsWithoutLE($expected, $out);
     }

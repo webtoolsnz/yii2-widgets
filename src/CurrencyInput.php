@@ -38,7 +38,7 @@ class CurrencyInput extends InputWidget
 
     public function run()
     {
-        echo '<div class="input-group"><div class="input-group-addon">'.$this->currencySymbol.'</div>';
+        echo '<div class="input-group"><div class="input-group-prepend"><span class="input-group-text">'.$this->currencySymbol.'</span></div>';
 
         if ($this->hasModel()) {
             echo Html::activeTextInput($this->model, $this->attribute, $this->options);

@@ -82,7 +82,7 @@ class DatePicker extends InputWidget
 
         if ($this->displayIcon) {
             $icon = Html::tag('span', null, ['class' => 'glyphicon glyphicon-calendar']);
-            $addon = Html::tag('div', $icon, ['class' => 'input-group-addon']);
+            $addon = Html::tag('div', $icon, ['class' => 'input-group-prepend']);
             $input = Html::tag('div', $addon.$input, ['class' => 'input-group']);
         }
 
