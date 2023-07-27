@@ -25,7 +25,7 @@ class SignatureAsset extends AssetBundle
      */
     public $depends = [
         'webtoolsnz\widgets\SignaturePadAsset',
-        'yii\bootstrap\BootstrapPluginAsset'
+        'yii\bootstrap4\BootstrapPluginAsset'
     ];
 
     /**

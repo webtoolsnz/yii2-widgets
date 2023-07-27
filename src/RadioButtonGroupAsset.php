@@ -23,7 +23,7 @@ class RadioButtonGroupAsset extends AssetBundle
     ];
 
     public $depends = [
-        'yii\bootstrap\BootstrapPluginAsset',
+        'yii\bootstrap4\BootstrapPluginAsset',
     ];
 
     public function init()

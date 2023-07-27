@@ -1,7 +1,16 @@
 {
   "name": "webtoolsnz/yii2-widgets",
   "description": "A Yii2 widgets library by Webtools",
-  "keywords": ["yii2", "widget", "wysiwyg", "radioButton", "google", "maps", "datepicker", "currency"],
+  "keywords": [
+    "yii2",
+    "widget",
+    "wysiwyg",
+    "radioButton",
+    "google",
+    "maps",
+    "datepicker",
+    "currency"
+  ],
   "type": "yii2-extension",
   "license": "proprietary",
   "homepage": "https://github.com/webtoolsnz/yii2-widgets",
@@ -20,11 +29,11 @@
   ],
   "require": {
     "yiisoft/yii2": "^2.0.13",
-    "yiisoft/yii2-bootstrap": "*",
-    "yiisoft/yii2-jui" : "*",
+    "yiisoft/yii2-bootstrap4": "^2.0",
+    "yiisoft/yii2-jui": "*",
     "bower-asset/font-awesome": "^4.3",
     "bower-asset/signature_pad": "1.5.3",
-	"bower-asset/bootbox.js": "4.4.0",
+    "bower-asset/bootbox.js": "4.4.0",
     "symfony/intl": "^4.3",
     "php": ">=7.2.0"
   },
